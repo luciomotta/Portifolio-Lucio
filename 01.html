@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Label com Efeito de Digitação</title>
+  <style>
+    .typing-label {
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+      font-weight: 500;
+      font-size: .8vw;
+      color: #fff;
+      background-color: rgb(28,28,30);
+      box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+      border-radius: 0.4vw;
+      border: none;
+      outline: none;
+      padding: 0.4vw;
+      max-width: 190px;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .typing-label::after {
+      content: attr(data-text);
+      display: inline-block;
+      overflow: hidden;
+      animation: typing 2s steps(30) infinite;
+    }
+
+    @keyframes typing {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="typing-label" id="dev-label" data-text="Dev"></div>
+  <script>
+    const typingLabel = document.getElementById('dev-label');
+    const words = ['Desenvolvedor', 'Fotógrafo'];
+    let currentWordIndex = 0;
+
+    function updateTypingLabel() {
+      const currentWord = words[currentWordIndex];
+      typingLabel.setAttribute('data-text', currentWord);
+      currentWordIndex = (currentWordIndex + 1) % words.length;
+    }
+
+    setInterval(updateTypingLabel, 3000);
+  </script>
+</body>
+</html>

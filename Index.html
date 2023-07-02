@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Projeto</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+.typing-label {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 500;
+  font-size: 0,10cm; /* Altere o tamanho da fonte aqui */
+  color: #fff;
+  background-color: rgb(28,28,30);
+  box-shadow: 0 0 0.4vw rgba(0,0,0,0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.1vw; /* Altere o espaçamento desejado aqui */
+  width: 200px; /* Defina o tamanho do label aqui */
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+      top: 55.5%; /* Define a distância do topo */
+      left: 52%; /* Define a distância da esquerda */
+      transform: translate(-50%, -50%); /* Centraliza a label */
+      /* Outras propriedades de estilo da label */
+  border-radius: 10px; /* Define o raio de curvatura da borda */
+  padding-left: 20px; /* Define o espaçamento à esquerda do texto */
+  background-color: rgba(28, 28, 30, 0.7); /* Define a cor de fundo com transparência */
+}
+
+.typing-label::after {
+  content: attr(data-text);
+  display: inline-block;
+  overflow: hidden;
+  animation: typing 2s steps(30) infinite;
+  padding: 0,5px; /* Adicione o espaçamento desejado aqui */
+  font-size: 90%; /* Tamanho da fonte ajustável */
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="nav-wrapper">
         <nav>
-          <h1>--DEV Lúcio--</h1>
+          <h1>-DEV-Lúcio-></h1>
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Sobre</a></li>
@@ -20,9 +60,10 @@
           </ul>
         </nav>
       </div>
-      <div class="spacer"></div>
+      <div class="spacer">
+        <div class="typing-label" id="dev-label"></div>
+      </div>
     </header>
-
 
     <main>
       <section>
@@ -32,15 +73,8 @@
 
       <section>
         <h2>Meus Projetos</h2>
-        <ul>
-          <li>
-            <h3>Projeto 1</h3>
-            <p>Descrição do Projeto 1.</p>
-          </li>
-          <li>
-            <h3>Projeto 2</h3>
-            <p>Descrição do Projeto 2.</p>
-          </li>
+        <ul id="projects-list">
+          <li></li>
         </ul>
       </section>
 
@@ -54,5 +88,27 @@
       <p>&copy; 2023 Meu Projeto. Todos os direitos reservados.</p>
     </footer>
   </div>
+
+  <script>
+    const typingLabel = document.getElementById('dev-label');
+    const words = ['*******','Desenvolvedor', 'Editor', 'Estudante'];
+    let currentWordIndex = Math.floor(Math.random() * words.length);
+
+    function updateTypingLabel() {
+      typingLabel.setAttribute('data-text', words[currentWordIndex]);
+      currentWordIndex = (currentWordIndex + 1) % words.length;
+    }
+
+    setInterval(updateTypingLabel, 3000);
+
+    // Atualizar a lista de projetos
+    const projectsList = document.getElementById('projects-list');
+    projectsList.innerHTML = '';
+    for (let i = 1; i <= 2; i++) {
+      const li = document.createElement('li');
+      li.innerHTML = `<h3>Projeto ${i}</h3><p>Descrição do Projeto ${i}.</p>`;
+      projectsList.appendChild(li);
+    }
+  </script>
 </body>
 </html>
