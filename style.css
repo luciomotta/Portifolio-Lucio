@@ -1,0 +1,86 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("img/0101.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      background-image: url("img/0101.jpg");
+}
+  }
+h1, h2, h3 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: transparent;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    
+}
+
+/* Estilos do menu */
+nav a {
+    color: white;
+    text-decoration: none;
+  }
+nav h1 {
+  color: white;
+  text-decoration: none;
+  padding-right: 22px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    
+}
+
+nav li {
+    margin-right: 15px;
+}
+
+.spacer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  
+/* Estilos do conteúdo principal */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
