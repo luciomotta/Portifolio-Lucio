@@ -50,13 +50,15 @@
   <div class="container">
     <header>
       <div class="nav-wrapper">
-        <nav>
-          <h1>-DEV-Lúcio-></h1>
+        <nav class="fixed-menu"> <!-- Adicione a classe "fixed-menu" ao elemento <nav> -->
+          <a href="https://github.com/luciomotta" target="_blank">
+            <img src="img/icons8-github.png" alt="-DEV-Lúcio->" width="50">
+          </a>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Projetos</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="#sobre-mim">Sobre</a></li>
+            <li><a href="#meus-projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
       </div>
@@ -66,19 +68,29 @@
     </header>
 
     <main>
-      <section>
-        <h2>Sobre Mim</h2>
-        <p>Algumas informações sobre você e suas habilidades.</p>
+      <section id="sobre-mim" class="sobre-mim-section">
+        <div class="container">
+          <div class="column">
+            <p>Algumas informações sobre você e suas habilidades.</p>
+          </div>
+          <div class="column">
+            <h2>Sobre Mim</h2>
+            <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+            <p>Nulla porttitor accumsan tincidunt.</p>
+            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+          </div>
+        </div>
       </section>
 
-      <section>
+      <section id="Meus Projetos">
         <h2>Meus Projetos</h2>
         <ul id="projects-list">
           <li></li>
         </ul>
       </section>
 
-      <section>
+      <section id="Contato">
         <h2>Contato</h2>
         <p>Informações de contato.</p>
       </section>
